@@ -1,0 +1,336 @@
+/* *** FONTS *** */
+/* Garamond */
+//Regular
+@font-face {
+	font-family: "Garamond";
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/ebgaramond.woff2) format("woff2"), url(../fonts/ebgaramond.woff) format("woff");
+}
+//Regular italic
+@font-face {
+	font-family: "Garamond";
+	font-style: italic;
+	font-weight: 400;
+	src: url(../fonts/ebgaramond-italic.woff2) format("woff2"), url(../fonts/ebgaramond-italic.woff) format("woff");
+}
+/* Poppins */
+//Thin
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 100;
+	src: url(../fonts/poppins-thin.woff2) format("woff2"), url(../fonts/poppins-thin.woff) format("woff");
+}
+//Thin italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 100;
+	src: url(../fonts/poppins-thinitalic.woff2) format("woff2"), url(../fonts/poppins-thinitalic.woff) format("woff");
+}
+//Extra light
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 200;
+	src: url(../fonts/poppins-extralight.woff2) format("woff2"), url(../fonts/poppins-extralight.woff) format("woff");
+}
+//Extra light italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 200;
+	src: url(../fonts/poppins-extralightitalic.woff2) format("woff2"), url(../fonts/poppins-extralightitalic.woff) format("woff");
+}
+//Light
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 300;
+	src: url(../fonts/poppins-light.woff2) format("woff2"), url(../fonts/poppins-light.woff) format("woff");
+}
+//Light italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 300;
+	src: url(../fonts/poppins-lightitalic.woff2) format("woff2"), url(../fonts/poppins-lightitalic.woff) format("woff");
+}
+//Regular
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/poppins-regular.woff2) format("woff2"), url(../fonts/poppins-regular.woff) format("woff");
+}
+//Regular italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 400;
+	src: url(../fonts/poppins-italic.woff2) format("woff2"), url(../fonts/poppins-italic.woff) format("woff");
+}
+//Medium
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	src: url(../fonts/poppins-medium.woff2) format("woff2"), url(../fonts/poppins-medium.woff) format("woff");
+}
+//Medium italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 500;
+	src: url(../fonts/poppins-mediumitalic.woff2) format("woff2"), url(../fonts/poppins-mediumitalic.woff) format("woff");
+}
+//Bold
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	src: url(../fonts/poppins-bold.woff2) format("woff2"), url(../fonts/poppins-bold.woff) format("woff");
+}
+//Bold italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 600;
+	src: url(../fonts/poppins-bolditalic.woff2) format("woff2"), url(../fonts/poppins-bolditalic.woff) format("woff");
+}
+//Extra bold
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/poppins-extrabold.woff2) format("woff2"), url(../fonts/poppins-extrabold.woff) format("woff");
+}
+//Extra bold italic
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/poppins-extrabolditalic.woff2) format("woff2"), url(../fonts/poppins-extrabolditalic.woff) format("woff");
+}
+//Black
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 800;
+	src: url(../fonts/poppins-black.woff2) format("woff2"), url(../fonts/poppins-black.woff) format("woff");
+}
+//Black italic
+@font-face {
+	font-family: "Poppins";
+	font-style: italic;
+	font-weight: 800;
+	src: url(../fonts/poppins-blackitalic.woff2) format("woff2"), url(../fonts/poppins-blackitalic.woff) format("woff");
+}
+
+//Font families
+.font-display {
+	font-family: "Garamond", Arial, Helvetica, sans-serif;
+}
+.font-body {
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+//Font weights
+.font-thin {
+	font-weight: 100;
+}
+.font-extraLight {
+	font-weight: 200;
+}
+.font-light {
+	font-weight: 300;
+}
+.font-regular {
+	font-weight: 400;
+}
+.font-medium {
+	font-weight: 500;
+}
+.font-bold {
+	font-weight: 600;
+}
+.font-extraBold {
+	font-weight: 700;
+}
+.font-black {
+	font-weight: 800;
+}
+
+//Font styles
+.font-italic {
+	font-style: italic;
+}
+.font-normal {
+	font-style: normal;
+}
+.font-uppercase {
+	text-transform: uppercase;
+}
+.font-lowercase {
+	text-transform: lowercase;
+}
+.font-capatalise {
+	text-transform: capitalize;
+}
+
+//Font header sizes
+h1,
+.font-h1 {
+	font-size: 4rem;
+}
+h2,
+.font-h2 {
+	font-size: 3.4rem;
+}
+h3,
+.font-h3 {
+	font-size: 3rem;
+}
+h4,
+.font-h4 {
+	font-size: 2.5rem;
+}
+h5,
+.font-h5 {
+	font-size: 2rem;
+}
+h6,
+.font-h6 {
+	font-size: 1.5rem;
+}
+
+//Font body sizes
+.font-xxs {
+	font-size: 0.25rem;
+}
+.font-xs {
+	font-size: 0.5rem;
+}
+.font-s {
+	font-size: 0.75rem;
+}
+.font-m {
+	font-size: 1rem;
+}
+.font-l {
+	font-size: 1.25rem;
+}
+.font-xl {
+	font-size: 1.5rem;
+}
+.font-xxl {
+	font-size: 1.75rem;
+}
+
+/* *** Colors *** */
+$clr-black: #13121c;
+$clr-white: #fff;
+$clr-yellow: #fad762;
+$clr-light-yellow: #fcffd4;
+$clr-blue: #84a9b5;
+$clr-red: #f27350;
+$clr-pink: #f0bec9;
+
+.clr-black {
+	color: $clr-black;
+}
+.bclr-black {
+	background-color: $clr-black;
+}
+.clr-white {
+	color: $clr-white;
+}
+.bclr-white {
+	background-color: $clr-white;
+}
+.clr-yellow {
+	color: $clr-yellow;
+}
+.bclr-yellow {
+	background-color: $clr-yellow;
+}
+.clr-light-yellow {
+	color: $clr-light-yellow;
+}
+.bclr-light-yellow {
+	background-color: $clr-light-yellow;
+}
+.clr-blue {
+	color: $clr-blue;
+}
+.bclr-blue {
+	background-color: $clr-blue;
+}
+.clr-red {
+	color: $clr-red;
+}
+.bclr-red {
+	background-color: $clr-red;
+}
+.clr-pink {
+	color: $clr-pink;
+}
+.bclr-pink {
+	background-color: $clr-pink;
+}
+
+/* *** Default Elements *** */
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0 auto;
+}
+
+html,
+body {
+	color: $clr-black;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: 1.2;
+	min-height: 100vh;
+	max-width: 100vw;
+	overflow-x: hidden;
+	text-decoration: none;
+}
+
+main {
+	min-height: 100vh;
+	overflow-x: hidden;
+	width: 100vw;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select,
+option {
+	all: unset;
+}
+
+button {
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Garamond", Arial, Helvetica, sans-serif;
+}

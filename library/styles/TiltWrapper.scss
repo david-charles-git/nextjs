@@ -1,0 +1,15 @@
+.TiltWrapper {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	width: auto;
+
+	.Tilt {
+		position: absolute;
+		top: -5%;
+		left: -5%;
+		height: 110%;
+		width: 110%;
+		z-index: -1;
+	}
+}
