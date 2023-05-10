@@ -1,0 +1,82 @@
+// {
+// 	"taskDefinitionArn": "arn:aws:ecs:eu-west-1:890193199295:task-definition/demo-taskDefinition:1",
+// 	"containerDefinitions": [
+// 		{
+// 			"name": "demo",
+// 			"image": "890193199295.dkr.ecr.eu-west-1.amazonaws.com/demo-repository:latest",
+// 			"cpu": 0,
+// 			"portMappings": [
+// 				{
+// 					"name": "demo-80-tcp",
+// 					"containerPort": 80,
+// 					"hostPort": 80,
+// 					"protocol": "tcp",
+// 					"appProtocol": "http"
+// 				}
+// 			],
+// 			"essential": true,
+// 			"environment": [],
+// 			"environmentFiles": [],
+// 			"mountPoints": [],
+// 			"volumesFrom": [],
+// 			"ulimits": [],
+// 			"logConfiguration": {
+// 				"logDriver": "awslogs",
+// 				"options": {
+// 					"awslogs-group": "/ecs/demo-taskDefinition",
+// 					"awslogs-create-group": "true",
+// 					"awslogs-region": "eu-west-1",
+// 					"awslogs-stream-prefix": "ecs"
+// 				}
+// 			}
+// 		}
+// 	],
+// 	"family": "demo-taskDefinition",
+// 	"taskRoleArn": "arn:aws:iam::890193199295:role/ecsTaskExecutionRole",
+// 	"executionRoleArn": "arn:aws:iam::890193199295:role/ecsTaskExecutionRole",
+// 	"networkMode": "awsvpc",
+// 	"revision": 1,
+// 	"volumes": [],
+// 	"status": "ACTIVE",
+// 	"requiresAttributes": [
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+// 		},
+// 		{
+// 			"name": "ecs.capability.execution-role-awslogs"
+// 		},
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.ecr-auth"
+// 		},
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+// 		},
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.task-iam-role"
+// 		},
+// 		{
+// 			"name": "ecs.capability.execution-role-ecr-pull"
+// 		},
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+// 		},
+// 		{
+// 			"name": "ecs.capability.task-eni"
+// 		},
+// 		{
+// 			"name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+// 		}
+// 	],
+// 	"placementConstraints": [],
+// 	"compatibilities": ["EC2", "FARGATE"],
+// 	"requiresCompatibilities": ["FARGATE"],
+// 	"cpu": "256",
+// 	"memory": "512",
+// 	"runtimePlatform": {
+// 		"cpuArchitecture": "X86_64",
+// 		"operatingSystemFamily": "LINUX"
+// 	},
+// 	"registeredAt": "2023-05-09T09:27:44.568Z",
+// 	"registeredBy": "arn:aws:iam::890193199295:root",
+// 	"tags": []
+// }
