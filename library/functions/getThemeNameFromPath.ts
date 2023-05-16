@@ -1,4 +1,4 @@
-import { ThemeName } from "@/interfaces/Theme";
+import { ThemeName } from "@/contexts/Theme";
 
 const blackPath: string = "/how-can-we-help*";
 const redPath: string = "/marketing*";

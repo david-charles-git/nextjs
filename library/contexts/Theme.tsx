@@ -35,4 +35,4 @@ const useThemeContext: () => ThemeContextProps = () => {
 	return useContext(ThemeContext);
 };
 
-export { ThemeProvider, useThemeContext };
+export { ThemeProvider, useThemeContext, type ThemeName };
