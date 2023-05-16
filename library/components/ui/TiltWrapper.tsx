@@ -1,6 +1,12 @@
 import getTiltWrapperRotation from "@/library/functions/getTiltWrapperRotation";
 import getTiltWrapperSkew from "@/library/functions/getTiltWrapperSkew";
-import { TiltWrapperProps } from "@/library/interfaces/TiltWrapper";
+
+export interface TiltWrapperProps {
+	className?: string;
+	children: React.ReactNode;
+	rotation?: number;
+	skew?: number;
+}
 
 const TiltWrapper: ({ children, rotation, skew, className }: TiltWrapperProps) => JSX.Element = ({ children, rotation = 0, skew = 0, className = "" }) => {
 	return (

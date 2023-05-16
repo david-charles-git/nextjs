@@ -1,0 +1,63 @@
+@import "../colors.scss";
+
+footer {
+	position: relative;
+	padding: 50px;
+	padding-top: 100px;
+
+	&::before {
+		border-color: transparent transparent $clr-black;
+		border-style: solid;
+		border-width: 0 0 20px 98vw;
+		content: "";
+		display: block;
+		height: 0;
+		position: absolute;
+		right: 0;
+		top: -20px;
+	}
+
+	.Footer {
+		max-width: 1720px;
+		grid-template-areas:
+			"top"
+			"bottom"
+			"legal";
+
+		.top {
+			grid-area: top;
+			grid-template-columns: repeat(2, auto);
+			grid-gap: clamp(50px, 20vw, 100px);
+			padding-bottom: 100px;
+		}
+
+		.bottom {
+			grid-area: bottom;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas: "left right";
+			grid-gap: 50px;
+			width: 100%;
+			border-top: 1px solid rgba(255, 255, 255, 0.4);
+			padding: 25px 0;
+
+			.left {
+				width: 100%;
+				grid-template-columns: repeat(2, auto);
+				justify-content: start;
+				grid-gap: 25px;
+			}
+
+			.right {
+				width: 100%;
+				justify-content: end;
+				grid-template-columns: repeat(3, auto);
+				grid-gap: 25px;
+			}
+		}
+
+		.legal {
+			width: 100%;
+			text-align: right;
+		}
+	}
+}

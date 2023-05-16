@@ -23,10 +23,10 @@
 			"@/*": ["./*"],
 			"@/styles/*": ["./library/styles/*"],
 			"@/interfaces/*": ["./library/interfaces/*"],
-			"@/types/*": ["./library/types/*"],
 			"@/functions/*": ["./library/functions/*"],
 			"@/components/*": ["./library/components/*"],
-			"@/ui/*": ["./library/components/ui/*"]
+			"@/ui/*": ["./library/components/ui/*"],
+			"@/contexts/*": ["./library/contexts/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

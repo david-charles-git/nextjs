@@ -1,7 +1,9 @@
-node_modules
-
-.next
-out
+/node_modules
+/.next
+/out
+/.vscode
+/.github
+/unlighthouse
 
 .DS_Store
 
@@ -16,5 +18,3 @@ yarn-error.log*
 
 .gitignore
 README.md
-.vscode
-.github
