@@ -1,0 +1,71 @@
+.Form {
+	&.contact {
+		form {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"name name"
+				"email phoneNumber"
+				"company company"
+				"comment comment"
+				"submit .";
+			padding-top: 50px;
+			grid-gap: 20px;
+
+			input,
+			textarea {
+				background-color: hsla(0, 0%, 100%, 0.15);
+				border: 1px solid transparent;
+				color: #fff;
+				padding: 0.5em;
+				transition: border 0.5s ease;
+				box-sizing: border-box;
+
+				&:focus-within {
+					border: 1px solid #fad762;
+				}
+
+				&:-webkit-autofill,
+				:-webkit-autofill:hover,
+				:-webkit-autofill:focus {
+					border: 1px solid $clr-blue;
+					-webkit-text-fill-color: $clr-blue;
+					-webkit-box-shadow: 0 0 0px 1000px $clr-black inset;
+					transition: background-color 5000s ease-in-out 0s;
+				}
+
+				&.error {
+					border-color: #f27250;
+				}
+			}
+
+			#name {
+				grid-area: name;
+			}
+
+			#email {
+				grid-area: email;
+			}
+
+			#phone-number {
+				grid-area: phoneNumber;
+			}
+
+			#company {
+				grid-area: company;
+			}
+
+			#comment {
+				grid-area: comment;
+			}
+
+			#submit {
+				grid-area: submit;
+				width: 100%;
+
+				input {
+					color: $clr-black;
+				}
+			}
+		}
+	}
+}

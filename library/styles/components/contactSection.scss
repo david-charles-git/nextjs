@@ -1,0 +1,17 @@
+.ContactSection {
+	.buttons {
+		grid-template-columns: repeat(3, auto);
+		grid-gap: clamp(10px, 10vw, 150px);
+		margin-right: 0;
+		justify-content: end;
+
+		> div {
+			&:hover {
+				opacity: 1 !important;
+			}
+		}
+	}
+
+	.form {
+	}
+}

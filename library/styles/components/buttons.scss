@@ -1,0 +1,347 @@
+@import "../colors.scss";
+
+.Button {
+	&.whatsapp {
+		.TiltWrapper {
+			.Tilt {
+				opacity: 0.1;
+				transition: opacity 500ms ease-in-out;
+			}
+
+			a {
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+
+				.Picture {
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 0.3;
+				}
+
+				a {
+					//color: $clr-yellow;
+				}
+			}
+		}
+
+		&.red {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-red;
+					}
+				}
+			}
+		}
+
+		&.blue {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-blue;
+					}
+				}
+			}
+		}
+
+		&.pink {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-pink;
+					}
+				}
+			}
+		}
+	}
+
+	&.email {
+		.TiltWrapper {
+			.Tilt {
+				opacity: 0.1;
+				transition: opacity 500ms ease-in-out;
+			}
+
+			a {
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+
+				.Picture {
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 0.3;
+				}
+
+				a {
+					//color: $clr-yellow;
+				}
+			}
+		}
+
+		&.red {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-red;
+					}
+				}
+			}
+		}
+
+		&.blue {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-blue;
+					}
+				}
+			}
+		}
+
+		&.pink {
+			&:hover {
+				.TiltWrapper {
+					a {
+						//color: $clr-pink;
+					}
+				}
+			}
+		}
+	}
+
+	&.home {
+	}
+
+	&.function {
+		.TiltWrapper {
+			.Tilt {
+				opacity: 0.1;
+				transition: opacity 500ms ease-in-out;
+			}
+
+			button {
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+
+				.Picture {
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 0.3;
+				}
+
+				button {
+					//color: $clr-yellow;
+				}
+			}
+		}
+	}
+
+	&.dropDown {
+		position: relative;
+
+		.TiltWrapper {
+			.Tilt {
+				opacity: 0.1;
+				transition: opacity 500ms ease-in-out;
+			}
+
+			button {
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+
+				.Picture {
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 0.3;
+				}
+
+				button {
+					//color: $clr-yellow;
+				}
+			}
+		}
+
+		.options {
+			position: absolute;
+			width: 110%;
+			left: -5%;
+			transition: height 500ms ease-in-out;
+			overflow: hidden;
+
+			ul {
+				grid-gap: 5px;
+				padding-top: 10px;
+
+				li {
+					width: 100%;
+
+					a {
+						display: block;
+						padding: 10px 5%;
+						background-color: rgba(255, 255, 255, 0.1);
+						transition: background 500ms ease-in-out;
+
+						&:hover {
+							background-color: rgba(255, 255, 255, 0.3);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.navigationLink {
+		.TiltWrapper {
+			.Tilt {
+				opacity: 0;
+				transition: opacity 500ms ease-in-out;
+				background-color: $clr-black;
+			}
+
+			a {
+				color: $clr-black;
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 1;
+				}
+
+				a {
+					color: $clr-yellow;
+				}
+			}
+		}
+
+		&.active {
+			.TiltWrapper {
+				.Tilt {
+					opacity: 1;
+				}
+
+				a {
+					color: $clr-yellow;
+				}
+			}
+		}
+
+		&.black {
+			.TiltWrapper {
+				.Tilt {
+					background-color: $clr-yellow;
+				}
+
+				a {
+					color: $clr-white;
+				}
+			}
+
+			&:hover {
+				.TiltWrapper {
+					a {
+						color: $clr-black;
+					}
+				}
+			}
+
+			&.active {
+				.TiltWrapper {
+					a {
+						color: $clr-black;
+					}
+				}
+			}
+		}
+
+		&.red {
+			&:hover {
+				.TiltWrapper {
+					a {
+						color: $clr-red;
+					}
+				}
+			}
+
+			&.active {
+				.TiltWrapper {
+					a {
+						color: $clr-red;
+					}
+				}
+			}
+		}
+
+		&.blue {
+			&:hover {
+				.TiltWrapper {
+					a {
+						color: $clr-blue;
+					}
+				}
+			}
+
+			&.active {
+				.TiltWrapper {
+					a {
+						color: $clr-blue;
+					}
+				}
+			}
+		}
+
+		&.pink {
+			&:hover {
+				.TiltWrapper {
+					a {
+						color: $clr-pink;
+					}
+				}
+			}
+
+			&.active {
+				.TiltWrapper {
+					a {
+						color: $clr-pink;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+@import "../components/contactSection.scss";
+@import "../fonts.scss";
+
+.HowCanWeHelp {
+	padding: 70px 50px 0px 50px;
+	min-height: 780px;
+
+	.page {
+		max-width: 1300px;
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: "left right";
+
+		.left {
+			grid-area: left;
+			position: relative;
+			min-height: 780px;
+			width: 100%;
+
+			.background {
+				left: -14vw;
+			}
+
+			h1 {
+				transform: translateX(70px);
+				padding-top: 80px;
+			}
+		}
+
+		.right {
+			grid-area: right;
+		}
+	}
+
+	+ footer {
+		padding-top: 0;
+
+		&::before {
+			display: none;
+		}
+
+		.top {
+			height: 0;
+			overflow: hidden;
+			padding: 0;
+		}
+	}
+}
