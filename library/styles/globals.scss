@@ -1,12 +1,13 @@
 @import "./colors.scss";
 @import "./fonts.scss";
 
-@import "./components/tiltWrapper.scss";
-@import "./components/footer.scss";
-@import "./components/buttons.scss";
-@import "./components/media.scss";
-@import "./components/navigation.scss";
-@import "./components/forms.scss";
+@import "./component/tiltWrapper.scss";
+@import "./component/footer.scss";
+@import "./component/buttons.scss";
+@import "./component/media.scss";
+@import "./component/navigation.scss";
+@import "./component/forms.scss";
+@import "./component/inputs.scss";
 
 /* *** Default Elements *** */
 * {
@@ -27,8 +28,11 @@ body {
 	line-height: 1.2;
 	min-height: 100vh;
 	max-width: 100vw;
-	//overflow-x: hidden;
 	text-decoration: none;
+}
+
+html {
+	overflow-x: hidden;
 }
 
 body {
@@ -37,6 +41,7 @@ body {
 
 main {
 	min-height: 100vh;
+	padding: 0 50px;
 }
 
 a {
@@ -50,15 +55,6 @@ textarea,
 select,
 option {
 	all: unset;
-}
-
-input,
-textarea {
-	width: 100%;
-}
-
-input[type="submit"] {
-	cursor: pointer;
 }
 
 button {
@@ -102,4 +98,15 @@ ul {
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: 1fr;
+}
+
+.Spacer {
+	transition: height 500ms ease-in-out;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+.cursor-default {
+	cursor: default;
 }

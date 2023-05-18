@@ -67,5 +67,30 @@
 				}
 			}
 		}
+
+		&.error {
+			.errorMessage {
+				padding-top: 100px;
+
+				> div {
+					grid-gap: 20px;
+					background-color: hsla(0, 0%, 100%, 0.1);
+					grid-template-columns: 1fr;
+					padding: 50px;
+					text-align: center;
+
+					h6 {
+						.TiltWrapper {
+							color: $clr-black;
+							margin-left: 10px;
+						}
+					}
+
+					p {
+						max-width: 480px;
+					}
+				}
+			}
+		}
 	}
 }

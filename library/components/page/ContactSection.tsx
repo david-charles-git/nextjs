@@ -1,9 +1,9 @@
 "use client";
 
-import ContactForm from "./ContentForm";
+import ContactForm from "../ui/ContactForm";
 import Picture from "@/library/components/ui/Picture";
 import { useCallback, useMemo, useRef, useState } from "react";
-import { scrollToElement } from "../functions/ElementFunctions";
+import { scrollToElement } from "../../functions/ElementFunctions";
 import WhatsappButton from "@/library/components/ui/buttons/WhatsappButton";
 import FunctionButton from "@/library/components/ui/buttons/FunctionButton";
 

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import "@/styles/pages/howCanWeHelpPage.scss";
+import "@/styles/page/howCanWeHelp.scss";
 import Picture from "@/library/components/ui/Picture";
 import TiltWrapper from "@/library/components/ui/TiltWrapper";
-import ContactSection from "@/library/components/ContactSection";
+import ContactSection from "@/library/components/page/ContactSection";
 
 export const metadata: Metadata = {
 	title: "Get in touch",
