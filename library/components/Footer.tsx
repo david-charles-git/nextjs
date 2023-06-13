@@ -1,7 +1,7 @@
 import Link from "next/link";
+import EmailButton from "./ui/buttons/EmailButton";
 import Picture from "@/library/components/ui/Picture";
 import WhatsappButton from "./ui/buttons/WhatsappButton";
-import EmailButton from "./ui/buttons/EmailButton";
 
 const Footer: React.FC = () => {
 	return (

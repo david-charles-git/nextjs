@@ -11,22 +11,16 @@ import { FormState } from "../../interfaces/Forms";
 
 const ContactForm: React.FC = () => {
 	const [formState, setFormState] = useState<FormState>("ready");
-
 	const nameRef: React.MutableRefObject<any> = useRef(null);
 	const emailRef: React.MutableRefObject<any> = useRef(null);
 	const telRef: React.MutableRefObject<any> = useRef(null);
 	const companyRef: React.MutableRefObject<any> = useRef(null);
 	const commentRef: React.MutableRefObject<any> = useRef(null);
-
 	const submitButton: JSX.Element = useMemo(() => {
 		return <SubmitButton state={formState} />;
 	}, [formState]);
 
-	const handleContactFormSubmit: (event: any) => void = (event) => {
-		event?.preventDefault();
-
-		setFormState("loading");
-
+	const validateContactFormInputs: () => boolean = () => {
 		var validationPassed: boolean = true;
 
 		if (!nameRef.current.value) {
@@ -48,6 +42,16 @@ const ContactForm: React.FC = () => {
 		if (!commentRef.current.value) {
 			validationPassed = false;
 		}
+
+		return validationPassed;
+	};
+
+	const handleContactFormSubmit: (event: any) => void = (event) => {
+		event?.preventDefault();
+
+		setFormState("loading");
+
+		var validationPassed: boolean = validateContactFormInputs();
 
 		if (!validationPassed) {
 			setFormState("ready");

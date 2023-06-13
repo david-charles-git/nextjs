@@ -18,3 +18,5 @@ yarn-error.log*
 
 .gitignore
 README.md
+
+aws-david-keyPair.txt

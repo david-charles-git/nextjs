@@ -75,7 +75,8 @@
 				display: block;
 				transition: color 500ms ease-in-out;
 
-				.Picture {
+				svg {
+					display: inline-block;
 					vertical-align: middle;
 					margin-right: 10px;
 				}
@@ -95,6 +96,15 @@
 		}
 
 		&.red {
+			.TiltWrapper {
+				a {
+					svg {
+						path {
+							fill: $clr-red;
+						}
+					}
+				}
+			}
 			&:hover {
 				.TiltWrapper {
 					a {
@@ -105,6 +115,16 @@
 		}
 
 		&.blue {
+			.TiltWrapper {
+				a {
+					svg {
+						path {
+							fill: $clr-blue;
+						}
+					}
+				}
+			}
+
 			&:hover {
 				.TiltWrapper {
 					a {
@@ -115,6 +135,16 @@
 		}
 
 		&.pink {
+			.TiltWrapper {
+				a {
+					svg {
+						path {
+							fill: $clr-pink;
+						}
+					}
+				}
+			}
+
 			&:hover {
 				.TiltWrapper {
 					a {
@@ -154,6 +184,24 @@
 				}
 
 				button {
+					//color: $clr-yellow;
+				}
+			}
+		}
+	}
+
+	&.link {
+		.TiltWrapper {
+			a {
+				padding: 10px;
+				display: block;
+				transition: color 500ms ease-in-out;
+			}
+		}
+
+		&:hover {
+			.TiltWrapper {
+				a {
 					//color: $clr-yellow;
 				}
 			}

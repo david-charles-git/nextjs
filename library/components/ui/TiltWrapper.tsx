@@ -1,5 +1,5 @@
-import getTiltWrapperRotation from "@/library/functions/getTiltWrapperRotation";
 import getTiltWrapperSkew from "@/library/functions/getTiltWrapperSkew";
+import getTiltWrapperRotation from "@/library/functions/getTiltWrapperRotation";
 
 export interface TiltWrapperProps {
 	className?: string;

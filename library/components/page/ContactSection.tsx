@@ -2,8 +2,8 @@
 
 import ContactForm from "../ui/ContactForm";
 import Picture from "@/library/components/ui/Picture";
+import { scrollToElement } from "../../functions/Elements";
 import { useCallback, useMemo, useRef, useState } from "react";
-import { scrollToElement } from "../../functions/ElementFunctions";
 import WhatsappButton from "@/library/components/ui/buttons/WhatsappButton";
 import FunctionButton from "@/library/components/ui/buttons/FunctionButton";
 
@@ -12,26 +12,21 @@ type ButtonType = "form" | "location" | "none";
 const ContactSection: React.FC = () => {
 	const [activeButton, setActiveButton] = useState<ButtonType>("none");
 	const optionsRef: React.MutableRefObject<any> = useRef(null);
-
 	const formRef: React.MutableRefObject<any> = useRef(null);
 
 	const handleSwitchActiveButton: (targetButton: ButtonType) => void = useCallback((targetButton) => {
 		setActiveButton((prevValue: ButtonType) => {
+			if (targetButton === prevValue) {
+				return "none";
+			}
+
 			switch (targetButton) {
 				case "form":
-					if (targetButton === prevValue) {
-						return "none";
-					}
-
 					scrollToElement(formRef.current, -100);
 
 					return targetButton;
 
 				case "location":
-					if (targetButton === prevValue) {
-						return "none";
-					}
-
 					return targetButton;
 
 				default:
@@ -43,6 +38,7 @@ const ContactSection: React.FC = () => {
 	const whatsappButton: JSX.Element = useMemo(() => {
 		return <WhatsappButton />;
 	}, []);
+
 	const formButton: JSX.Element = useMemo(() => {
 		return (
 			<FunctionButton
@@ -55,6 +51,7 @@ const ContactSection: React.FC = () => {
 			</FunctionButton>
 		);
 	}, [handleSwitchActiveButton]);
+
 	const dropDownButton: JSX.Element = useMemo(() => {
 		return (
 			<FunctionButton

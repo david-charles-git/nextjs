@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { getThemeNameFromPath } from "@/functions/getThemeNameFromPath";
 import { Dispatch, SetStateAction, createContext, useContext, useLayoutEffect, useState } from "react";
 
-type ThemeName = "black" | "red" | "pink" | "blue" | "yellow";
+export type ThemeName = "black" | "red" | "pink" | "blue" | "yellow";
 
 interface ThemeContextProps {
 	name: ThemeName;
@@ -16,7 +16,7 @@ const ThemeContext = createContext<ThemeContextProps>({
 	setName: (): ThemeName => "yellow"
 });
 
-const ThemeProvider: ({ children }: { children: React.ReactNode }) => JSX.Element = ({ children }) => {
+export const ThemeProvider: ({ children }: { children: React.ReactNode }) => JSX.Element = ({ children }) => {
 	const [name, setName] = useState<ThemeName>("yellow");
 	const pathName: string = usePathname();
 
@@ -31,8 +31,6 @@ const ThemeProvider: ({ children }: { children: React.ReactNode }) => JSX.Elemen
 	return <ThemeContext.Provider value={{ name, setName }}>{children}</ThemeContext.Provider>;
 };
 
-const useThemeContext: () => ThemeContextProps = () => {
+export const useThemeContext: () => ThemeContextProps = () => {
 	return useContext(ThemeContext);
 };
-
-export { ThemeProvider, useThemeContext, type ThemeName };

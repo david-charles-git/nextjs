@@ -1,45 +1,65 @@
 import { Metadata } from "next";
-import "@/styles/page/MarketingChild.scss";
 import Spacer from "@/library/components/ui/Spacer";
+import Picture from "@/library/components/ui/Picture";
+import { uspItem } from "@/library/interfaces/Marketing";
 import TiltWrapper from "@/library/components/ui/TiltWrapper";
-import { endpoint, getMarketingPost } from "@/library/functions/MarketingFunctions";
-import { MarketingPost, MarketingPostUSPItem } from "@/library/interfaces/MarketingPost";
+import { MarketingPostModel } from "@/library/models/Marketing";
+import { MarketingPostData } from "@/library/interfaces/Marketing";
+import { getAllMarketingPostData, getMarketingPostDataBySlug } from "@/library/functions/Marketing";
 
-export const metadata: Metadata = {
-	title: "Marketing Child",
-	description: "This is the Marketing child page"
-};
+interface MarketingChildProps {
+	params: { _slug: string };
+}
 
-async function generateStaticParams(): Promise<{ _slug: string }[]> {
-	const response: Response = await fetch(`${endpoint}?acf_format=standard`);
-	const posts: MarketingPost[] = await response.json();
+const generateStaticParams: () => Promise<{ _slug: string }[]> = async () => {
+	const posts: MarketingPostData[] = await getAllMarketingPostData();
 
-	return posts.map((post: any) => {
+	return posts.map((post: MarketingPostData) => {
 		return {
 			_slug: post.slug
 		};
 	});
-}
+};
 
-const MarketingChild: ({ params }: { params: any }) => Promise<JSX.Element> = async ({ params }) => {
-	const post: MarketingPost = await getMarketingPost(params._slug);
+export const generateMetadata: ({ params }: MarketingChildProps) => Promise<Metadata> = async ({ params }) => {
+	const post: MarketingPostData = await getMarketingPostDataBySlug(params._slug);
+
+	return {
+		title: post.acf?.post_details?.intro?.title || "",
+		description: post.acf?.post_details?.intro?.copy || "",
+		robots: {
+			index: post.yoast_head_json?.robots?.index === "index" ? true : false,
+			follow: post.yoast_head_json?.robots?.follow === "follow" ? true : false
+		}
+	};
+};
+
+const MarketingChild: ({ params }: MarketingChildProps) => Promise<JSX.Element> = async ({ params }) => {
+	const post: MarketingPostData = await getMarketingPostDataBySlug(params._slug);
 
 	return (
-		<main className="MarketingChild">
+		<main>
 			<div className="page">
 				<section className="intro grid">
-					<div className="background">
-						<img src={post.intro?.image?.src} alt={post.intro?.image?.alt} width={790} height={780} />
-					</div>
+					{post.acf?.post_details?.intro?.image ? (
+						<Picture src={post.acf?.post_details?.intro?.image} alt={post.acf?.post_details?.intro?.image_alt || ""} width={790} height={780} />
+					) : (
+						<></>
+					)}
 
-					<h1 className="clr-white font-h2">
-						<TiltWrapper className="bclr-black">{post.intro?.title}</TiltWrapper>
+					<h1 className="clr-white">
+						<TiltWrapper className="bclr-black" rotation={4} skew={4}>
+							{post.acf?.post_details?.intro?.title || MarketingPostModel.acf.post_details.intro.title}
+						</TiltWrapper>
 					</h1>
 
-					<p className="font-xl">{post.intro?.copy}</p>
+					<p
+						className="font-xl"
+						dangerouslySetInnerHTML={{ __html: post.acf?.post_details?.intro?.copy || MarketingPostModel.acf.post_details.intro.copy }}
+					/>
 				</section>
 
-				{post.usp?.include ? (
+				{post.acf?.post_details?.usp?.include ? (
 					<>
 						<Spacer heights_px={{ desktop: 250, laptop: 200, tablet: 150, mobile: 100 }} />
 
@@ -47,34 +67,42 @@ const MarketingChild: ({ params }: { params: any }) => Promise<JSX.Element> = as
 							<div className="background shape" />
 
 							<div className="background image">
-								<img src={post.usp?.image?.src} alt={post.usp?.image?.alt} width={700} height={900} />
+								{post.acf?.post_details?.usp?.image ? (
+									<Picture src={post.acf?.post_details?.usp?.image} alt={post.acf?.post_details?.usp?.image_alt || ""} width={700} height={900} />
+								) : (
+									<></>
+								)}
 							</div>
 
-							<ul className="grid">
-								{post.usp?.items?.map((item: MarketingPostUSPItem, key: number) => {
-									return (
-										<li key={key} className="grid">
-											<img src={item.image?.src} alt={item.image?.alt || ""} width={30} height={30} />
+							{post.acf?.post_details?.usp?.items ? (
+								<ul className="grid">
+									{post.acf?.post_details?.usp.items.map((item: uspItem, key: number) => {
+										return (
+											<li key={key} className="grid">
+												{item.icon ? <Picture src={item.icon} alt={item.icon_alt || ""} width={30} height={30} /> : <></>}
 
-											<h6 className="clr-white" dangerouslySetInnerHTML={{ __html: item.title }} />
+												<h6 className="clr-white" dangerouslySetInnerHTML={{ __html: item.title }} />
 
-											<p className="clr-white" dangerouslySetInnerHTML={{ __html: item.copy }} />
-										</li>
-									);
-								})}
-							</ul>
+												<p className="clr-white" dangerouslySetInnerHTML={{ __html: item.copy }} />
+											</li>
+										);
+									})}
+								</ul>
+							) : (
+								<></>
+							)}
 						</section>
 					</>
 				) : (
 					<></>
 				)}
 
-				{post.contentBlocks ? (
+				{post.acf?.post_details?.content_block ? (
 					<>
 						<Spacer heights_px={{ desktop: 300, laptop: 250, tablet: 200, mobile: 150 }} />
 
 						<section className="contentBlocks">
-							{post.contentBlocks?.map((contentBlock, key: number) => {
+							{post.acf?.post_details?.content_block?.map((contentBlock: any, key: number) => {
 								return <div key={key} className={`contentBlock ${contentBlock.type}`}></div>;
 							})}
 						</section>
@@ -83,7 +111,7 @@ const MarketingChild: ({ params }: { params: any }) => Promise<JSX.Element> = as
 					<></>
 				)}
 
-				{post.servicesOverview?.include ? (
+				{post.acf?.post_details?.services_overview?.include ? (
 					<>
 						<Spacer heights_px={{ desktop: 300, laptop: 250, tablet: 200, mobile: 150 }} />
 
@@ -93,7 +121,7 @@ const MarketingChild: ({ params }: { params: any }) => Promise<JSX.Element> = as
 					<></>
 				)}
 
-				{post.clientCarousel?.include ? (
+				{post.acf?.post_details?.client_carousel?.include ? (
 					<>
 						<Spacer heights_px={{ desktop: 300, laptop: 250, tablet: 200, mobile: 150 }} />
 
@@ -103,7 +131,7 @@ const MarketingChild: ({ params }: { params: any }) => Promise<JSX.Element> = as
 					<></>
 				)}
 
-				{post.partnerCarousel?.include ? <section className="partnerCarousel"></section> : <></>}
+				{post.acf?.post_details?.partner_carousel?.include ? <section className="partnerCarousel"></section> : <></>}
 			</div>
 		</main>
 	);

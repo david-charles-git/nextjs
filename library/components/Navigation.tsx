@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
 import HomeButton from "./ui/buttons/HomeButton";
 import NavigationLink from "./ui/NavigationLink";
 import ThemeBackground from "./ui/ThemeBackground";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const Navigation: React.FC = () => {
 	const [navigationHeight_px, setNavigationHeight_px] = useState<number | "auto">("auto");
